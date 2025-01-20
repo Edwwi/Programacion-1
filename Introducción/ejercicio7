@@ -1,0 +1,36 @@
+//7.Leer tres números enteros y determinar cuál es el mayor. Usar solamente dos variables.
+
+using System;
+
+class program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Digite un número entero :");
+        int numero1 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Digite otro número entero :");
+        int numero2 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Digite otro número entero :");
+        int numero3 = Convert.ToInt32(Console.ReadLine());
+
+        int mayor;
+
+        if ( numero1 > numero2)
+        {
+            mayor = numero1;
+        }
+        
+        else
+        {
+            mayor = numero2;
+        }
+
+        if (numero3 > mayor)
+        {
+            mayor = numero3;
+        }
+
+        Console.WriteLine($"El digito mayor es: {mayor}");
+
+    }
+}

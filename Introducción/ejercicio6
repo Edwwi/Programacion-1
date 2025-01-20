@@ -1,0 +1,56 @@
+//6.Leer un número entero de tres dígitos y determinar si algún dígito es múltiplo de los otros.
+
+using System;
+
+class program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Digite un número entero de tres dígitos:");
+        int numero1 = Convert.ToInt32(Console.ReadLine());
+        // Verificar si el número tiene dos dígitos
+        if (numero1 > 99 && numero1 < 1000 || numero1 < -99 && numero1 > -1000)
+        {
+            int c = Math.Abs(numero1) % 10;      // Último dígito
+            int n = Math.Abs(numero1 / 10);      // Parte entera menos el último dígito
+            int b = n % 10;                      // Segundo dígito
+            int a = n / 10;                      // Primer dígito
+           
+                    if (a % b == 0)
+                    {
+                        Console.WriteLine($"El digito {a} es multiplo del digito {b}");
+                    }
+                    else if (b % a == 0)
+                    {
+                        Console.WriteLine($"El digito {b} es multiplo del digito {a}");
+                    }
+                    else if (b % c == 0)
+                    {
+                    Console.WriteLine($"El digito {b} es multiplo del digito {c}");
+                    }
+                    else if (c % b == 0)
+                    {
+                        Console.WriteLine($"El digito {c} es multiplo del digito {b}");
+                    }
+                    else if (a % c == 0)
+                    {
+                        Console.WriteLine($"El digito{a} es multiplo del digito {c}");
+                    }
+                    else if (c % a == 0)
+                    {
+                        Console.WriteLine($"El digito {c} es multiplo del digito {a}");
+                    }
+                    else 
+                    {  
+                        Console.WriteLine("Ningun digito es multiplo de otro, intente con otros digitos");
+                    }
+           
+        }   
+        else
+        {
+            Console.WriteLine("El número ingresado no tiene tres dígitos. Intente nuevamente.");
+        }
+
+
+    }
+}

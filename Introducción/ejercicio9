@@ -1,0 +1,31 @@
+//9.Leer un número entero de cuatro dígitos y determinar si el segundo dígito es igual al penúltimo.
+
+using System;
+
+class program
+{
+    static void Main(string[] args)
+    {
+         Console.WriteLine("Digite un número entero de cinco dígitos:");
+            string numero = Console.ReadLine();
+
+            // Verificar si tiene 5 dígitos
+            if (numero.Length == 4 && int.TryParse(numero, out int numeroEntero))
+            {
+                // Verificar si es capicúa comparando dígitos
+                if (numero[1] == numero[2])
+                {
+                    Console.WriteLine($"El número {numero}, el segundo numero {numero[1]} es igual al penultimo numero {numero[2]}");
+                }
+                else
+                {
+                    Console.WriteLine($"El número {numero}, el segundo numero {numero[1]} no es igual al penultimo numero {numero[2]}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("El número debe tener exactamente 5 dígitos.");
+            }
+
+    }
+}

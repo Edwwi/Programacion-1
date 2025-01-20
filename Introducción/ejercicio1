@@ -1,0 +1,24 @@
+// 1. Leer un número entero de dos dígitos y determinar a cuánto es igual la suma de sus dígitos.
+using System;
+
+class Ejercicio1
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Digite un número entero de dos dígitos:");
+        int numero = Convert.ToInt32(Console.ReadLine());
+
+         Verificar si el número tiene dos dígitos
+        if (numero > 9 && numero < 100 || numero < -9 && numero > -100)
+        {
+            int a = numero / 10;  // Primer dígito (decenas)
+            int b = numero % 10;  // Segundo dígito (unidades)
+            int suma = a + b;  // Sumar los dígitos
+            Console.WriteLine($"La suma de los dígitos de {numero} es: {suma}");
+        }
+        else
+        {
+           Console.WriteLine("El número ingresado no tiene dos dígitos. Intente nuevamente.");
+        }
+    }
+}
