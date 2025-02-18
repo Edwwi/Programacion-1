@@ -14,7 +14,9 @@ class Program
             numeros[i] = int.Parse(Console.ReadLine());
         }
 
-        int maxIndex = Array.IndexOf(numeros, numeros.Max());
-        Console.WriteLine($"El mayor número está en la posición: {maxIndex}");
+        int maxPar = numeros.Where(n => n % 2 == 0).DefaultIfEmpty(int.MinValue).Max();
+        int maxParIndex = Array.IndexOf(numeros, maxPar);
+
+        Console.WriteLine(maxPar == int.MinValue ? "No hay números pares." : $"El mayor número par está en la posición: {maxParIndex}");
     }
 }

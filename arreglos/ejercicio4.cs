@@ -14,7 +14,9 @@ class Program
             numeros[i] = int.Parse(Console.ReadLine());
         }
 
-        int maxIndex = Array.IndexOf(numeros, numeros.Max());
-        Console.WriteLine($"El mayor número está en la posición: {maxIndex}");
+        int[] digitosPrimos = { 2, 3, 5, 7 };
+        int conteoDigitoPrimo = numeros.Count(n => digitosPrimos.Contains(Math.Abs(n).ToString()[0] - '0'));
+
+        Console.WriteLine($"Cantidad de números que comienzan con un dígito primo: {conteoDigitoPrimo}");
     }
 }
